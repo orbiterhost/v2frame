@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjYwMjMsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHg0NTYxMzExNjFmODNDN0Q3ZkRBMTViMzJhNWY3QzIxRkQ0RTI3RTk2In0",
+    "payload": "eyJkb21haW4iOiJ2MmRlbW8ub3JiaXRlci53ZWJzaXRlIn0",
+    "signature": "MHg3MjA3YTU3MWU3ZTRkMmIyNDY3NWUzNWRiYjRmZjM0OTgzNjU1MDllYjk3MWIyMzc5YjMxZGFmZDE1Y2YwMmIxMTAyZGI0MjA5MWMwNWUzYWQxM2I5YmY0NGUyMjc3ZTI0NTZiMTQyNWZhMzU1NmFjMmI2NGNjZmUwMzIxOWM4MTFi"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Orbiter Demo",
+    "iconUrl": "https://v2demo.orbiter.website/icon.png",
+    "homeUrl": "https://v2demo.orbiter.website",
+    "imageUrl": "https://v2demo.orbiter.website/image.png",
+    "buttonTitle": "Launch",
+    "splashImageUrl": "https://v2demo.orbiter.website/splash.png",
+    "splashBackgroundColor": "#ffffff"
+  }
+}

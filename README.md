@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+## Orbiter V2 Frame Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![cover](./public/image.png)
 
-Currently, two official plugins are available:
+This is a simple Farcaster V2 Frame built with React + Vite that can be hosted on IPFS and Base through [Orbiter](https://orbiter.host).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> [!TIP]
+> [Read the tutorial on how to build this frame!](https://orbiter.host/blog/how-to-deploy-a-v2-frame-on-orbiter)
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Clone the repo and install dependencies
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/orbiterhost/v2frame
+cd v2frame
+npm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Make a build of the site to initially deploy
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run build
 ```
+
+Make an account on [Orbiter](https://app.orbiter.host) and upload the `dist` folder as a new site, or use the [orbiter-cli](https://github.com/orbiterhost/orbiter-cli) to programmatically create the site.
+
+```bash
+npm i -g orbiter-cli
+
+orbiter login -p google # or github
+
+orbiter create -d <choose a name> ./dist
+```
+
+Take note of the full domain of your new website!
+
+## Development
+
+Run the development server. If you plan to test inside the [Frame Developer Tools](https://warpcast.com/~/developers/frames) be sure to tunnel through a service like Ngrok or Tailscale
+
+```bash
+npm run dev
+```
+
+[Follow the tutorial to see steps on updating the Frame Manifest and Embed Tag](https://orbiter.host/blog/how-to-deploy-a-v2-frame-on-orbiter)
+
+When completed make a new build of the site using `npm run build` and update your Orbiter site on the app or with the CLI:
+
+```bash
+orbiter update -d <your name> ./dist
+```
+
+## Contact
+
+Feel free to [reach out](mailto:steve@orbiter.host,justin@orbiter.host) if you have any questions!
